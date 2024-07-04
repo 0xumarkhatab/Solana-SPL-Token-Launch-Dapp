@@ -1,6 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SPL Token Launch Dapp
+
+![image](https://github.com/0xumarkhatab/Solana-SPL-Token-Launch-Dapp/assets/71306738/69166585-021f-49bc-9bb4-0bc8dc0ae81f)
+
 
 ## Getting Started
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
