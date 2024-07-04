@@ -1,6 +1,6 @@
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import * as web3 from "@solana/web3.js";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import {
   MINT_SIZE,
@@ -49,13 +49,16 @@ export const CreateMintForm: FC = () => {
         TOKEN_PROGRAM_ID
       )
     );
-
-    sendTransaction(transaction, connection, {
-      signers: [mint],
-    }).then((sig) => {
-      setTxSig(sig);
-      setMint(mint.publicKey.toString());
-    });
+    try {
+      await sendTransaction(transaction, connection, {
+        signers: [mint],
+      }).then((sig) => {
+        setTxSig(sig);
+        setMint(mint.publicKey.toString());
+      });
+    } catch (error) {
+      console.log("errror ", error);
+    }
   };
 
   return (
@@ -67,13 +70,37 @@ export const CreateMintForm: FC = () => {
           </button>
         </form>
       ) : (
-        <span>Connect Your Wallet</span>
+        <div
+          // style={{
+          //   paddingTop: "20%",
+          // }}
+        >
+          <span
+            style={{
+              color: "white",
+              fontSize: "20px",
+              fontWeight: "700",
+            }}
+          >
+            Please Connect Your Solana Wallet
+          </span>
+        </div>
       )}
       {txSig ? (
-        <div>
+        <div
+        style={{
+          backgroundColor: "rgba(255, 255, 255,0.5)",
+          padding:"20px",
+          borderRadius:'20px'
+        }}
+        >
           <p>Token Mint Address: {mint}</p>
           <p>View your transaction on </p>
-          <a href={link()}>Solana Explorer</a>
+          <a
+          style={{
+            color:"white"
+          }}
+          href={link()}>Solana Explorer</a>
         </div>
       ) : null}
     </div>

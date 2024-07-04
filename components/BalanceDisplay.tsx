@@ -17,9 +17,28 @@ export const BalanceDisplay: FC = () => {
     });
   }, [connection, publicKey]);
 
-  return (
-    <div>
-      <p>{publicKey ? `SOL Balance: ${balance / LAMPORTS_PER_SOL}` : ""}</p>
+  return publicKey ? (
+    <div 
+    style={{
+      display:'flex',
+      flexDirection:'row',
+      alignItems:'center',
+      justifyContent:'center',
+      color:"white"
+    }}
+    >
+      <p>{`Balance: ${(balance / LAMPORTS_PER_SOL).toFixed(2)}`}</p>
+      <img
+        src="https://cloudfront-us-east-1.images.arcpublishing.com/coindesk/VNKJKO74VFFNTBJF7BP4N4YHWI.png"
+        style={{
+          height: "25px",
+          width: "25px",
+          borderRadius: "50%",
+          marginLeft: "10px",
+        }}
+      />
     </div>
+  ) : (
+    <></>
   );
 };

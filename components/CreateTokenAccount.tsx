@@ -61,15 +61,14 @@ export const CreateTokenAccountForm: FC = () => {
       <br />
       {publicKey ? (
         <form onSubmit={createTokenAccount} className={styles.form}>
-          <label htmlFor="owner">Token Mint:</label>
           <input
             id="mint"
             type="text"
             className={styles.formField}
-            placeholder="Enter Token Mint"
+            placeholder="Enter Token Mint Address obtained from Create Mint button"
             required
           />
-          <label htmlFor="owner">Token Account Owner:</label>
+
           <input
             id="owner"
             type="text"

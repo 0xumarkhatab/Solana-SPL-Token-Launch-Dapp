@@ -1,14 +1,19 @@
 .App {
   min-height: 100vh;
+
+  height: fit-content;
   display: flex;
   flex-direction: column;
-
+ 
   text-align: left;
-  background-color: #282c34;
+  overflow: hidden;
 }
 
 .AppHeader {
-  height: 90px;
+  height: 20vh;
+  position: sticky;
+  top: 0;
+  left: 0;
   display: flex;
   background-color: black;
   flex-direction: row;
@@ -18,18 +23,21 @@
   color: white;
   padding-left: 20px;
   padding-right: 20px;
+
   flex-wrap: wrap;
 }
 
 .AppBody {
-  height: 100%;
+  min-height: 80vh;
+
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: white;
-  padding-top: 50px;
+   color: white;
+
 }
 
 .form {
@@ -40,6 +48,11 @@
 
 .input {
   background: #f2f2f2;
+  border-radius: 20px;
+}
+.form > input {
+  height: 10px;
+  border-radius: 20px;
 }
 
 .formField {
@@ -50,10 +63,20 @@
   border: 0;
   font-family: "Roboto", sans-serif;
 }
+.form > label {
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 1px solid white;
+  border-radius: 10px;
+}
 .formButton {
-  margin: 10px 0 10px 0;
+  margin: 5px 0 5px 0;
   padding: 15px;
-  font-size: 16px;
+  font-size: 18px;
   border: 0;
-  font-family: "Roboto", sans-serif;
+  background: rgba(1, 206, 252, 01);
+  color: black;
+  cursor: pointer;
+  border-radius: 20px;
+  font-weight: 700;
 }

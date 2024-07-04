@@ -7,7 +7,7 @@ export const AppBar: FC = () => {
   return (
     <div className={styles.AppHeader}>
       <Image src="/solanaLogo.png" height={30} width={200} />
-      <span>Token Program</span>
+      <span>SPL Token Launch Dapp</span>
       <WalletMultiButton />
     </div>
   );

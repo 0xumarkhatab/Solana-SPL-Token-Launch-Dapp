@@ -12,16 +12,28 @@ const Home: NextPage = (props) => {
   return (
     <div className={styles.App}>
       <Head>
-        <title>Token Program</title>
+        <title>SPL Token Launch Dapp</title>
         <meta name="description" content="Token Program" />
       </Head>
       <WalletContextProvider>
         <AppBar />
-        <div className={styles.AppBody}>
-          <BalanceDisplay />
-          <CreateMintForm />
-          <CreateTokenAccountForm />
-          <MintToForm />
+        <div
+          style={{
+            background: `url("https://images7.alphacoders.com/901/thumb-1920-901328.jpg")`,
+            backgroundRepeat:'no-repeat',
+            backgroundSize:"cover",
+            minHeight: "100%",
+            
+            height: "fit-content",
+          }}
+          className={styles.AppBody}
+        >
+          <div className={styles.AppBody}>
+            <BalanceDisplay />
+            <CreateMintForm />
+            <CreateTokenAccountForm />
+            <MintToForm />
+          </div>
         </div>
       </WalletContextProvider>
     </div>
